@@ -39,6 +39,7 @@ class MultiHeadSelfAttentionModule(BaseNeuralArchitecture):
             nn.init.xavier_uniform_(module.weight)
         nn.init.xavier_uniform_(self.output_projection.weight)
         nn.init.constant_(self.output_projection.bias, 0)
+        
     
     def forward(self, input_tensor, attention_mask=None):
         batch_size, sequence_length, embedding_dim = input_tensor.shape
